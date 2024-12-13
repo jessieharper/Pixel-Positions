@@ -6,10 +6,14 @@
                 Let's Find Your Next Job!
             </h1>
 
-            <form action="" class="mt-6">
-                <input type="text" placeholder="I'm looking for..."
-                       class="rounded-2xl bg-white/5 px-5 py-3 w-full max-w-xl">
-            </form>
+            {{--            <form action="" class="mt-6">--}}
+            {{--                <input type="text" placeholder="I'm looking for..."--}}
+            {{--                       class="rounded-2xl bg-white/5 px-5 py-3 w-full max-w-xl">--}}
+            {{--            </form>--}}
+
+            <x-forms.form action="/search">
+                <x-forms.input :label="false" name="q" placeholder="Web Developer"/>
+            </x-forms.form>
         </section>
         <section class="pt-10">
             <x-section-heading>Featured Jobs</x-section-heading>
