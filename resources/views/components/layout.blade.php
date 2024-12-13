@@ -13,7 +13,7 @@
 
     @vite(['resources/js/app.js', 'resources/css/app.css'])
 </head>
-<body class="bg-gray-950 text-white font-hanken-grotesk">
+<body class="bg-gray-950 text-white font-hanken-grotesk pb-20">
 
 <div class=" mx-4 ">
     <nav class="flex justify-between items-center py-4 border-b border-white/10">
@@ -29,7 +29,17 @@
             <a href="">Salaries</a>
             <a href="">Companies</a>
         </div>
-        <div><a href="">Post a Job</a></div>
+
+        @auth
+            <div><a href="/jobs/create">Post a Job</a></div>
+        @endauth
+
+        @guest
+            <div class="flex gap-6 font-bold">
+                <a href="/register">Sign Up</a>
+                <a href="/login">Login</a>
+            </div>
+        @endguest
     </nav>
     <main class="mt-10 max-w-[986px] mx-auto">
         {{ $slot }}
